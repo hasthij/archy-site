@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archy: free game clipper for Windows. Zero frames lost.</title>
+<meta name="description" content="Archy keeps your last minute of gameplay ready to save on your graphics chip's own video encoder. Free, open source, local-first. No account, no uploads.">
+<link rel="canonical" href="https://archy.pages.dev/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1320" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Archy">
+<meta property="og:title" content="Archy: zero frames lost">
+<meta property="og:description" content="Free, open-source game clipper for Windows. Press F8 to save the last 30 seconds. No account, no uploads.">
+<meta property="og:url" content="https://archy.pages.dev/">
+<meta property="og:image" content="https://archy.pages.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ARCHY. Zero frames lost. Free game clipper for Windows.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Archy","description":"Free, open-source, local-first game clipper for Windows. Press F8 to save the last 30 seconds of gameplay, encoded on the graphics chip's own video engine.","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10 version 2004 or newer, 64-bit","url":"https://archy.pages.dev/","downloadUrl":"https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe","fileSize":"12MB","license":"https://www.gnu.org/licenses/gpl-3.0.html","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Hasthi"},"codeRepository":"https://github.com/hasthij/Archy","image":"https://archy.pages.dev/og.png"}</script>
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="#top" aria-label="Archy, back to top">ARCHY<span class="wordmark__dot">.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#specs">Specs</a>
+      <a href="#steps">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/hasthij/Archy">Source</a>
+    </nav>
+    <a class="btn btn--ink btn--sm" href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe">
+      <span class="btn__label">Download<span class="hide-sm"> · Windows</span></span>
+      <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero wrap" id="top" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow hero__in hero__in--1">FREE GAME CLIPPER · WINDOWS 10/11</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Zero</span></span>
+        <span class="line"><span>frames</span></span>
+        <span class="line"><span class="accent-text">lost.</span></span>
+      </h1>
+      <p class="hero__lede hero__in hero__in--2">Archy keeps your last minute of gameplay ready to save, on your graphics chip's own video encoder, so your game keeps its frames.</p>
+      <div class="hero__actions hero__in hero__in--3">
+        <a class="btn btn--accent btn--lg" href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe">
+          <span class="btn__label">Download free</span>
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+        </a>
+        <a class="btn btn--outline btn--lg" href="#specs"><span class="btn__label">Read the specs</span></a>
+      </div>
+      <p class="hero__meta hero__in hero__in--4">Windows 10 (2004+) or 11, 64-bit · ~12 MB · No account</p>
+    </div>
+
+    <figure class="hud" aria-labelledby="hud-caption">
+      <div class="hud__bar">
+        <span>ROBLOX · INTEL iGPU</span>
+        <span class="hud__rec"><i class="hud__dot"></i>ARCHY RECORDING</span>
+      </div>
+      <div class="hud__fps">
+        <div class="fps" role="img" aria-label="Around 144 frames per second">
+          <span aria-hidden="true">14</span><span class="fps__roll" aria-hidden="true"><span class="fps__col"><span>4</span><span>3</span><span>4</span><span>2</span><span>4</span></span></span>
+        </div>
+        <span class="fps__unit">FPS</span>
+      </div>
+      <div class="trace">
+        <svg class="trace__lines" viewBox="0 0 560 150" preserveAspectRatio="none" aria-hidden="true">
+          <line class="trace__grid" x1="0" y1="37.5" x2="560" y2="37.5"/>
+          <line class="trace__grid" x1="0" y1="112.5" x2="560" y2="112.5"/>
+          <polyline class="trace__alone" points="0,66.0 10,70.8 20,69.2 30,62.5 40,62.2 50,62.5 60,67.6 70,63.2 80,70.5 90,69.6 100,75.3 110,73.7 120,63.5 130,66.0 140,64.1 150,70.5 160,69.2 170,62.5 180,71.2 190,66.0 200,68.0 210,72.8 220,65.1 230,68.9 240,71.8 250,75.3 260,67.3 270,63.8 280,62.2 290,72.4 300,74.0 310,71.5 320,69.9 330,73.4 340,68.3 350,62.5 360,70.5 370,73.1 380,67.0 390,61.9 400,63.8 410,62.5 420,63.5 430,67.0 440,62.8 450,69.2 460,73.1 470,65.4 480,66.7 490,75.0 500,64.1 510,64.8 520,69.9 530,61.6 540,66.7 550,75.0 560,68.9"/>
+          <polyline class="trace__archy" points="0,77.9 10,81.7 20,82.4 30,76.9 40,76.0 50,73.7 60,84.6 70,75.6 80,88.1 90,83.3 100,86.2 110,86.5 120,75.0 130,82.7 140,79.2 150,84.0 160,80.4 170,74.7 180,84.9 190,81.1 200,80.8 210,88.8 220,80.1 230,86.2 240,84.6 250,86.8 260,84.0 270,77.9 280,77.9 290,87.2 300,86.8 310,86.5 320,83.6 330,91.3 340,84.0 350,78.5 360,88.8 370,85.9 380,82.7 390,76.0 400,75.3 410,78.8 420,76.0 430,84.3 440,76.6 450,86.5 460,90.4 470,79.2 480,84.0 490,86.8 500,76.3 510,79.2 520,82.4 530,75.3 540,81.7 550,91.0 560,84.3"/>
+        </svg>
+        <div class="trace__cover" aria-hidden="true"><i class="trace__scan"></i></div>
+        <span class="trace__delta" aria-hidden="true">≈ 2–3% COST</span>
+        <span class="trace__toast" aria-hidden="true"><kbd>F8</kbd>CLIP SAVED · LAST 30 S</span>
+      </div>
+      <div class="hud__legend">
+        <span><i class="key key--alone"></i>Frame time, game alone</span>
+        <span><i class="key key--archy"></i>With Archy recording</span>
+      </div>
+      <figcaption id="hud-caption">Illustration. Measured in Roblox on an Intel iGPU, recording cost about 2–3% FPS. <span class="placeholder-note">[Benchmark chart: replace with your own measurement]</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- How it works -->
+  <section class="band band--white" id="steps" aria-labelledby="steps-title">
+    <div class="wrap">
+      <h2 class="sr-only" id="steps-title">How it works</h2>
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true"><span class="step__outline">01</span><span class="step__fill"><span>01</span></span></span>
+          <h3>Open a game</h3>
+          <p>Archy starts recording the moment a game from your list is in front, and stops when it closes. Nothing runs the rest of the time.</p>
+          <div class="shot" role="img" aria-label="Screenshot placeholder: game list">[Screenshot: game list]</div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true"><span class="step__outline">02</span><span class="step__fill"><span>02</span></span></span>
+          <h3>Hit <kbd>F8</kbd>, or just say it</h3>
+          <p>The last 30 seconds (or 60 with <kbd>Shift</kbd>+<kbd>F8</kbd>) land in your Videos folder as an MP4, in well under a second. Or say “Archer, clip that”.</p>
+          <div class="shot" role="img" aria-label="Screenshot placeholder: clip saved">[Screenshot: clip saved]</div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true"><span class="step__outline">03</span><span class="step__fill"><span>03</span></span></span>
+          <h3>Trim it, send it</h3>
+          <p>Cut it down, add text or music, and paste it straight into Discord as a video or a GIF.</p>
+          <div class="shot" role="img" aria-label="Screenshot placeholder: clip editor">[Screenshot: clip editor]</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="wrap section" id="specs" aria-labelledby="specs-title">
+    <h2 class="section__title" id="specs-title" data-reveal>Specs</h2>
+    <dl class="specs" data-reveal-group>
+      <div class="spec"><dt>ENCODING</dt><dd>Intel Quick Sync, NVIDIA NVENC, AMD AMF, through your graphics chip’s own video engine</dd></div>
+      <div class="spec"><dt>FORMATS</dt><dd>H.264, HEVC or AV1 in MP4 · 360p to 1440p · 24 to 144 fps</dd></div>
+      <div class="spec"><dt>FILE SIZE</dt><dd>About 19 MB per 30 s clip at 720p, or sized to fit Discord’s 10 MB limit</dd></div>
+      <div class="spec"><dt>HOTKEYS</dt><dd><kbd>F8</kbd> saves the last 30 s, <kbd>Shift</kbd>+<kbd>F8</kbd> the last 60 s, in well under a second</dd></div>
+      <div class="spec"><dt>AUDIO</dt><dd>Up to 4 tracks: everything, game, Discord and your mic, each with its own volume</dd></div>
+      <div class="spec"><dt>VOICE</dt><dd>“Archer, clip that”: on-device keyword spotting; calibrates to your voice; nothing is sent anywhere</dd></div>
+      <div class="spec"><dt>EDITOR</dt><dd>Trim, per-source volume, up to 3 text, image, video or audio tracks · export MP4 or GIF, save or copy to clipboard</dd></div>
+      <div class="spec"><dt>CAPTURE</dt><dd>Windows Graphics Capture: the game window or the whole screen; nothing injected</dd></div>
+      <div class="spec"><dt>PRIVACY</dt><dd>No account, no uploads, no telemetry; checks GitHub for updates only if you let it</dd></div>
+      <div class="spec"><dt>SYSTEM</dt><dd>Windows 10 version 2004 or newer, 64-bit</dd></div>
+    </dl>
+  </section>
+
+  <!-- CTA band -->
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap cta__inner">
+      <h2 class="cta__title" id="cta-title" data-reveal>
+        <span class="line"><span>Clip it.</span></span>
+        <span class="line"><span>Keep playing.</span></span>
+      </h2>
+      <div class="cta__side" data-reveal>
+        <a class="btn btn--white btn--xl" href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe">
+          <span class="btn__label">Download Archy</span>
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+        </a>
+        <p class="cta__meta">Free · Open source (GPL-3.0) · ~12 MB installer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap section" id="faq" aria-labelledby="faq-title">
+    <h2 class="section__title" id="faq-title" data-reveal>FAQ</h2>
+    <div class="faq" data-reveal-group>
+      <details class="qa">
+        <summary>Is it safe with anti-cheat?</summary>
+        <div class="qa__a"><p>Archy never injects anything into a game. It records with Windows Graphics Capture, which reads the game window from the outside, so it's safe to run alongside anti-cheat.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Where do my clips go?</summary>
+        <div class="qa__a"><p>Into your Videos folder, as ordinary MP4 files. They stay on your PC. Open one in Archy's editor to trim it, mix the audio, add text, images or music, then export an MP4 or GIF, or copy it to the clipboard.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Does it upload anything?</summary>
+        <div class="qa__a"><p>No. There's no account and nothing is uploaded; voice clipping runs on your PC too. The only network use is an optional update check against GitHub.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Which graphics cards does it work with?</summary>
+        <div class="qa__a"><p>Intel (Quick Sync), NVIDIA (NVENC) and AMD (AMF). Archy encodes on the graphics chip's own video engine, which is why the cost is small: measured in Roblox on an Intel iGPU, about 2–3% FPS.</p></div>
+      </details>
+      <details class="qa">
+        <summary>What does the installer download?</summary>
+        <div class="qa__a"><p>The installer is about 12 MB. While it runs it also fetches FFmpeg and the voice model. You need Windows 10 version 2004 or newer, 64-bit.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Is it really free?</summary>
+        <div class="qa__a"><p>Yes. Archy is open source under the GPL-3.0 licence. No ads, no subscription, no account. The code is on <a href="https://github.com/hasthij/Archy">GitHub</a>.</p></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark" href="#top" aria-label="Archy, back to top">ARCHY<span class="wordmark__dot">.</span></a>
+      <p>Free, open-source, local-first game clipper for Windows.</p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="https://github.com/hasthij/Archy">GitHub</a></li>
+      <li><a href="https://github.com/hasthij/Archy/releases">Releases</a></li>
+      <li><a href="https://github.com/hasthij/Archy/blob/main/LICENSE">Licence (GPL-3.0)</a></li>
+      <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either. <a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

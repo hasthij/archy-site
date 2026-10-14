@@ -81,6 +81,26 @@ framework preset: None; build command: (empty); output directory: `/` (or `site`
 if the files end up in a subfolder). After that every push to `main` deploys,
 and other branches get preview links.
 
+## What's built (Oct 2026)
+
+- `index.html`, `styles.css`, `main.js` at the root; `privacy.html` (privacy policy)
+  and `404.html` reuse the same CSS.
+- Fonts are self-hosted in `fonts/` (Latin subsets, OFL texts alongside; the user
+  approved the one-time download). `styles.css` also defines metric-matched
+  local fallbacks ("Archivo Fallback" on Arial, "Plex Mono Fallback" on Consolas).
+- SEO: meta description, canonical, Open Graph/Twitter card (`og.png`, rendered
+  from `design/og-card.html` with headless Chrome), JSON-LD SoftwareApplication,
+  `robots.txt`, `sitemap.xml`. All absolute URLs assume `https://archy.pages.dev/`;
+  change them (index, privacy, robots, sitemap) if the Pages name differs.
+- `_headers` (Cloudflare Pages): strict CSP, security headers, long-lived cache for
+  `fonts/*`, one-day cache for CSS/JS/images. The CSP allows the JSON-LD block by
+  its sha256 hash: **if you edit the JSON-LD in index.html, recompute the hash.**
+- Motion is pure CSS keyframes + IntersectionObserver class toggles. With
+  `prefers-reduced-motion: reduce` (e.g. Windows "Animation effects" off) the page
+  shows the finished still state. To preview motion on such a PC, run headless
+  Chrome with `--force-prefers-no-reduced-motion`.
+- Local preview: `python -m http.server 8787` in the repo root.
+
 ## Working rules
 
 - Commit with plain imperative messages; ask before pushing anything new public.
