@@ -2,8 +2,8 @@
 
 Archy is a free, open-source (GPL-3.0), local-first game clipper for Windows:
 https://github.com/hasthij/Archy. This repo is ONLY its website, hosted on
-Cloudflare Pages (free) at `archy.pages.dev` (name to confirm when the user
-connects it).
+GitHub Pages (free) at `https://hasthij.github.io/archy-site/` (the user moved off
+Cloudflare Pages in Oct 2026).
 
 ## The brief (decided with the user)
 
@@ -74,12 +74,12 @@ connects it).
 
 Brand: Archy's app icon is `design/archy.png` (blue `#4D8DFF` triangle "A").
 
-## Deploying (the user does this once, in the Cloudflare dashboard)
+## Deploying
 
-Workers & Pages → Create → Pages → Connect to Git → `hasthij/archy-site`;
-framework preset: None; build command: (empty); output directory: `/` (or `site`
-if the files end up in a subfolder). After that every push to `main` deploys,
-and other branches get preview links.
+GitHub Pages serves the repo root of `main` (Settings → Pages → Deploy from a
+branch → `main` / root). Every push to `main` goes live within a minute or two.
+`.nojekyll` makes GitHub serve files as-is. The site lives under `/archy-site/`,
+so use relative links; only `404.html` uses absolute `/archy-site/...` paths.
 
 ## What's built (Oct 2026)
 
@@ -90,11 +90,11 @@ and other branches get preview links.
   local fallbacks ("Archivo Fallback" on Arial, "Plex Mono Fallback" on Consolas).
 - SEO: meta description, canonical, Open Graph/Twitter card (`og.png`, rendered
   from `design/og-card.html` with headless Chrome), JSON-LD SoftwareApplication,
-  `robots.txt`, `sitemap.xml`. All absolute URLs assume `https://archy.pages.dev/`;
-  change them (index, privacy, robots, sitemap) if the Pages name differs.
-- `_headers` (Cloudflare Pages): strict CSP, security headers, long-lived cache for
-  `fonts/*`, one-day cache for CSS/JS/images. The CSP allows the JSON-LD block by
-  its sha256 hash: **if you edit the JSON-LD in index.html, recompute the hash.**
+  `sitemap.xml` (no robots.txt: it only works at a domain root). All absolute URLs use `https://hasthij.github.io/archy-site/`;
+  change them (index, privacy, 404, sitemap) if a custom domain is added.
+- GitHub Pages can't set response headers, so each page carries its CSP in a
+  `<meta http-equiv>` tag. The CSP in index.html allows the JSON-LD block by its
+  sha256 hash: **if you edit the JSON-LD in index.html, recompute the hash.**
 - Motion is pure CSS keyframes + IntersectionObserver class toggles. With
   `prefers-reduced-motion: reduce` (e.g. Windows "Animation effects" off) the page
   shows the finished still state. To preview motion on such a PC, run headless
