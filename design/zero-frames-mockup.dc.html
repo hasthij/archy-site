@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Archy: Zero frames lost</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,900&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F9}
+a{color:#1F55C4}a:hover{color:#163C8F}
+@keyframes fps{0%,18%{transform:translateY(0)}20%,38%{transform:translateY(-1em)}40%,58%{transform:translateY(-2em)}60%,78%{transform:translateY(-3em)}80%,100%{transform:translateY(-4em)}}
+@keyframes draw{0%{stroke-dashoffset:1200}55%,100%{stroke-dashoffset:0}}
+@keyframes scan{from{transform:translateX(0)}to{transform:translateX(560px)}}
+@keyframes blink{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F4F6F9; color: #0E1320; font-family: Archivo, system-ui, sans-serif">
+
+  <header style="border-bottom: 1px solid #DCE1EA; background: #FFFFFF">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px">
+      <a href="#" style="font: 900 24px Archivo, sans-serif; font-stretch: 112%; letter-spacing: -0.03em; color: #0E1320; text-decoration: none">ARCHY<span style="color: {{accent}}">.</span></a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 26px; font: 500 15px Archivo, sans-serif">
+        <a href="#specs" style="color: #3D4659; text-decoration: none">Specs</a>
+        <a href="#steps" style="color: #3D4659; text-decoration: none">How it works</a>
+        <a href="https://github.com/hasthij/Archy" style="color: #3D4659; text-decoration: none">Source</a>
+      </nav>
+      <a href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe" style="margin-left: auto; height: 44px; padding: 0 18px; background: #0E1320; color: #FFFFFF; display: inline-flex; align-items: center; font: 600 15px Archivo, sans-serif; text-decoration: none">Download · Windows</a>
+    </div>
+  </header>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 64px 32px 56px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 26px">
+      <span style="font: 600 13px 'IBM Plex Mono', monospace; color: #4F5A70; letter-spacing: 0.1em">FREE GAME CLIPPER · WINDOWS 10/11</span>
+      <h1 style="margin: 0; font: 900 clamp(56px, 8.6vw, 128px)/0.86 Archivo, sans-serif; font-stretch: 118%; letter-spacing: -0.045em; text-transform: uppercase">Zero<br>frames<br><span style="color: {{accent}}">lost.</span></h1>
+      <p style="margin: 0; max-width: 520px; font: 500 20px/1.5 Archivo, sans-serif; color: #3D4659">Archy keeps your last minute of gameplay ready to save, on your graphics chip's own video encoder, so your game keeps its frames.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe" style="height: 56px; padding: 0 28px; background: {{accent}}; color: #FFFFFF; display: inline-flex; align-items: center; font: 700 17px Archivo, sans-serif; text-decoration: none">Download free</a>
+        <a href="#specs" style="height: 56px; padding: 0 26px; border: 2px solid #0E1320; color: #0E1320; display: inline-flex; align-items: center; font: 700 17px Archivo, sans-serif; text-decoration: none">Read the specs</a>
+      </div>
+    </div>
+
+    <figure aria-label="Frame rate with Archy recording" style="flex: 1 1 520px; margin: 0; background: #0E1320; color: #E9EEF7; padding: 26px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; justify-content: space-between; align-items: center; font: 600 12px 'IBM Plex Mono', monospace; color: #8B96AD; letter-spacing: 0.08em">
+        <span>ROBLOX · INTEL UHD · 1080P</span>
+        <span style="display: flex; align-items: center; gap: 8px; color: #FF7A86"><i style="width: 8px; height: 8px; border-radius: 50%; background: #FF4D5E; animation: blink 1.2s infinite"></i>ARCHY RECORDING</span>
+      </div>
+      <div style="display: flex; align-items: flex-end; gap: 14px">
+        <div style="height: 1em; overflow: hidden; font: 600 112px/1 'IBM Plex Mono', monospace; letter-spacing: -0.04em">
+          <div style="display: flex; flex-direction: column; animation: fps 5s steps(1) infinite">
+            <span>144</span><span>143</span><span>144</span><span>142</span><span>144</span>
+          </div>
+        </div>
+        <span style="font: 600 18px 'IBM Plex Mono', monospace; color: #8B96AD; padding-bottom: 14px">FPS</span>
+      </div>
+      <div style="position: relative; height: 150px; border-top: 1px solid #222B3D; border-bottom: 1px solid #222B3D; overflow: hidden">
+        <svg viewBox="0 0 560 150" preserveAspectRatio="none" width="100%" height="150" aria-hidden="true">
+          <polyline points="0,72 40,70 80,74 120,69 160,73 200,70 240,75 280,71 320,73 360,69 400,74 440,70 480,72 520,71 560,73" fill="none" stroke="#4F5A70" stroke-width="2" stroke-dasharray="1200" style="animation: draw 6s ease-out infinite"></polyline>
+          <polyline points="0,76 40,74 80,78 120,73 160,77 200,75 240,79 280,74 320,77 360,73 400,78 440,74 480,76 520,75 560,77" fill="none" stroke="{{accent}}" stroke-width="3" stroke-dasharray="1200" style="animation: draw 6s ease-out infinite"></polyline>
+        </svg>
+        <div style="position: absolute; top: 0; bottom: 0; left: -2px; width: 2px; background: rgba(233, 238, 247, 0.4); animation: scan 6s linear infinite"></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 22px; font: 500 13px 'IBM Plex Mono', monospace; color: #8B96AD">
+        <span style="display: flex; align-items: center; gap: 8px"><i style="width: 18px; height: 3px; background: #4F5A70"></i>Frame time, game alone</span>
+        <span style="display: flex; align-items: center; gap: 8px"><i style="width: 18px; height: 3px; background: {{accent}}"></i>With Archy recording</span>
+      </div>
+      <figcaption style="font: 500 14px/1.5 Archivo, sans-serif; color: #B9C3D6">Measured in Roblox on an Intel iGPU: recording cost about 2–3% FPS. [Your own benchmark chart goes here.]</figcaption>
+    </figure>
+  </section>
+
+  <section id="steps" style="background: #FFFFFF; border-top: 1px solid #DCE1EA; border-bottom: 1px solid #DCE1EA">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 36px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="font: 900 96px/0.9 Archivo, sans-serif; font-stretch: 118%; color: transparent; -webkit-text-stroke: 2px {{accent}}">{{s.n}}</span>
+          <h3 style="margin: 0; font: 700 26px/1.15 Archivo, sans-serif; letter-spacing: -0.02em">{{s.title}}</h3>
+          <p style="margin: 0; font: 500 16px/1.55 Archivo, sans-serif; color: #4F5A70">{{s.body}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="specs" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px">
+    <h2 style="margin: 0 0 28px; font: 900 56px/1 Archivo, sans-serif; font-stretch: 112%; letter-spacing: -0.04em; text-transform: uppercase">Specs</h2>
+    <div style="border-top: 2px solid #0E1320">
+      <sc-for list="{{specs}}" as="r" hint-placeholder-count="8">
+        <div style="display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr); gap: 24px; padding: 18px 0; border-bottom: 1px solid #D2D8E3">
+          <span style="font: 600 13px 'IBM Plex Mono', monospace; color: #4F5A70; letter-spacing: 0.08em; padding-top: 3px">{{r.k}}</span>
+          <span style="font: 500 18px/1.45 Archivo, sans-serif">{{r.v}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background: {{accent}}; color: #FFFFFF">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 64px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px">
+      <h2 style="flex: 1 1 520px; margin: 0; font: 900 clamp(40px, 5.4vw, 76px)/0.92 Archivo, sans-serif; font-stretch: 116%; letter-spacing: -0.04em; text-transform: uppercase">Clip it.<br>Keep playing.</h2>
+      <a href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe" style="height: 60px; padding: 0 32px; background: #FFFFFF; color: #0E1320; display: inline-flex; align-items: center; font: 700 18px Archivo, sans-serif; text-decoration: none">Download Archy</a>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2F6FEB","options":["#2F6FEB","#E8590C","#0B7F6C","#6A55F0"]},"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#2F6FEB',
+      steps: [
+        { n: '01', title: 'Open a game', body: 'Archy starts recording the moment a game from your list is in front, and stops when it closes. Nothing runs the rest of the time.' },
+        { n: '02', title: 'Hit F8, or just say it', body: 'The last 30 seconds (or 60 with Shift+F8) land in your Videos folder as an MP4, in well under a second.' },
+        { n: '03', title: 'Trim it, send it', body: 'Cut it down, add text or music, and paste it straight into Discord as a video or a GIF.' },
+      ],
+      specs: [
+        { k: 'ENCODING', v: 'Intel Quick Sync, NVIDIA NVENC, AMD AMF, through your graphics chip’s own video engine' },
+        { k: 'FORMATS', v: 'H.264, HEVC or AV1 in MP4 · 360p to 1440p · 24 to 144 fps' },
+        { k: 'FILE SIZE', v: 'About 19 MB per 30 s clip at 720p, or sized to fit Discord’s 10 MB limit' },
+        { k: 'AUDIO', v: 'Up to 4 tracks: everything, game, Discord and your mic, each with its own volume' },
+        { k: 'VOICE', v: 'On-device keyword spotting; calibrates to your voice; nothing is sent anywhere' },
+        { k: 'CAPTURE', v: 'Windows Graphics Capture: the game window or the whole screen; nothing injected' },
+        { k: 'PRIVACY', v: 'No account, no uploads, no telemetry; checks GitHub for updates only if you let it' },
+        { k: 'SYSTEM', v: 'Windows 10 version 2004 or newer, 64-bit' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
