@@ -15,6 +15,22 @@
     step.style.setProperty("--delay", (i * 0.14).toFixed(2) + "s");
   });
 
+  // Download buttons: let the browser fetch the installer, then show the thanks + SmartScreen note.
+  var thanks = document.getElementById("dl-thanks");
+  if (thanks && thanks.showModal) {
+    document.querySelectorAll('a[href$="Archy-Setup.exe"]:not([data-no-thanks])').forEach(function (a) {
+      a.addEventListener("click", function () {
+        setTimeout(function () { if (!thanks.open) thanks.showModal(); }, 300);
+      });
+    });
+    thanks.querySelector(".dl__close").addEventListener("click", function () { thanks.close(); });
+    // Click on the dim backdrop (outside the box) closes it.
+    thanks.addEventListener("click", function (e) {
+      var r = thanks.getBoundingClientRect();
+      if (e.target === thanks && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) thanks.close();
+    });
+  }
+
   if (!("IntersectionObserver" in window)) {
     reveals.forEach(function (el) { el.classList.add("is-in"); });
     return;
