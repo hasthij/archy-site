@@ -100,7 +100,7 @@ so use relative links; only `404.html` uses absolute `/archy-site/...` paths.
   shows the finished still state. To preview motion on such a PC, run headless
   Chrome with `--force-prefers-no-reduced-motion`.
 - Steps 01/02/03 show short silent loops in `media/` (mp4 + webp poster), cut with ffmpeg
-  from the mock-UI scenes of `C:\Main\Archy\promorchy-promo-desktop.mp4`. `main.js`
+  from the mock-UI scenes of `C:/Main/Archy/promo/archy-promo-desktop.mp4`. `main.js`
   plays them only on screen and never with reduced motion (poster stays). CSP has `media-src 'self'`.
   Swap in real app recordings later at the same 5:4 size (750×600).
 - Local preview: `python -m http.server 8787` in the repo root.
