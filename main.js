@@ -37,4 +37,19 @@
       hud.classList.toggle("is-paused", !entries[0].isIntersecting);
     }).observe(hud);
   }
+
+  // Step clips: play only while on screen, and never with reduced motion (the poster stays).
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var clips = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var v = entry.target;
+      if (entry.isIntersecting && !reduce.matches) {
+        var p = v.play();
+        if (p) p.catch(function () {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll("video.shot").forEach(function (v) { clips.observe(v); });
 })();
