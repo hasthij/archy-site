@@ -644,14 +644,17 @@ kbd {
 
 /* ---------- Download thanks dialog ---------- */
 .dl {
-  width: min(560px, calc(100% - 32px)); max-height: calc(100% - 32px); margin: auto; padding: 32px;
+  width: min(860px, calc(100% - 32px)); max-height: calc(100% - 32px); margin: auto; padding: 32px;
   background: var(--band); color: var(--body); border: 2px solid var(--ink); border-top: 6px solid var(--accent);
 }
 .dl::backdrop { background: rgba(14, 19, 32, .55); }
 .dl__title { margin: 6px 0 14px; font: 900 32px/1.05 var(--sans); font-stretch: 112%; letter-spacing: -.03em; text-transform: uppercase; color: var(--ink); }
 .dl p { font: 500 16px/1.55 var(--sans); margin: 0 0 14px; }
 .dl .eyebrow { margin: 0; }
+.dl__warns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.dl__warns .dl__warn { margin: 0; font-size: 14px; }
 .dl__warn { padding: 14px 16px; border-left: 3px solid var(--accent); background: var(--page); }
+@media (max-width: 640px) { .dl__warns { grid-template-columns: 1fr; } }
 .dl__warn strong, .dl p strong { color: var(--ink); }
 .dl .dl__small { font: 500 13px/1.5 var(--mono); color: var(--label); }
 .dl__close { margin-top: 6px; }
