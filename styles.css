@@ -663,3 +663,5 @@ kbd {
   @keyframes dl-in { from { opacity: 0; transform: translateY(12px); } }
 }
 @media (max-width: 480px) { .dl { padding: 24px 20px; } .dl__title { font-size: 26px; } }
+.dl__col { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.dl__col .dl__warn { flex: 1; align-self: stretch; }
