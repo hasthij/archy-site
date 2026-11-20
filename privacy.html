@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy · Archy</title>
@@ -21,6 +21,7 @@
 <meta property="og:image" content="https://hasthij.github.io/archy-site/og.png">
 <link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -42,16 +43,17 @@
 </header>
 
 <main id="main" class="wrap section prose">
-  <p class="eyebrow">LAST UPDATED · 14 OCTOBER 2026</p>
+  <p class="eyebrow">LAST UPDATED · 21 NOVEMBER 2026</p>
   <h1 class="section__title">Privacy</h1>
   <p class="prose__lede">Short version: this website and the Archy app don't collect anything about you. There's nothing to opt out of.</p>
 
   <h2>This website</h2>
   <ul>
-    <li><strong>No cookies</strong>, no analytics, no trackers, no ads, no third-party scripts.</li>
+    <li><strong>No cookies</strong>, no ads, no advertising trackers and no third-party scripts.</li>
+    <li><strong>Anonymous visit counts.</strong> The site uses Vercel Web Analytics to count page views and visitors. It sets no cookies, doesn't follow you across sites, and the script is served from this site's own address. Nothing about your Archy clips or your PC is involved. See <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel's analytics privacy notes</a>.</li>
     <li>Fonts are served from this site, not from Google Fonts or any other font service.</li>
-    <li>The site is hosted on GitHub Pages. Like any web host, GitHub handles the technical details of each request (such as your IP address) to deliver the page and keep it secure. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
-    <li>Download buttons link to GitHub, which also serves the installer. When the home page loads, your browser makes one anonymous request to GitHub's public API to read the newest version number and file sizes, so the buttons point at the latest release. GitHub sees that request like any other visit; nothing about you is sent or stored by this site.</li>
+    <li>The site is hosted on Vercel. Like any web host, Vercel handles the technical details of each request (such as your IP address) to deliver the page and keep it secure. See <a href="https://vercel.com/legal/privacy-policy">Vercel's privacy policy</a>.</li>
+    <li>Download buttons link to GitHub, which serves the installer. When the home page loads, your browser makes one anonymous request to GitHub's public API to read the newest version number and file sizes, so the buttons point at the latest release. GitHub sees that request like any other visit; nothing about you is sent or stored by this site.</li>
   </ul>
 
   <h2>The Archy app</h2>
@@ -84,7 +86,7 @@
       <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
       <li><a href="privacy.html" aria-current="page">Privacy</a></li>
     </ul>
-    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either.</p>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no ads; visits are only counted anonymously.</p>
   </div>
 </footer>
 </body>

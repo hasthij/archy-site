@@ -3,6 +3,17 @@
 (function () {
   "use strict";
 
+
+  // Vercel Web Analytics (cookieless page-view counts). /_vercel/insights only exists on Vercel,
+  // so local previews never request it.
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    var va = document.createElement("script");
+    va.defer = true;
+    va.src = "/_vercel/insights/script.js";
+    document.head.appendChild(va);
+  }
+
   var reveals = document.querySelectorAll("[data-reveal], [data-reveal-group]");
 
   // Stagger: children of a group, and sibling steps, get increasing delays.

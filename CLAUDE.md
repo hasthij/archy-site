@@ -2,8 +2,9 @@
 
 Archy is a free, open-source (GPL-3.0), local-first game clipper for Windows:
 https://github.com/hasthij/Archy. This repo is ONLY its website, hosted on
-GitHub Pages (free) at `https://hasthij.github.io/archy-site/` (the user moved off
-Cloudflare Pages in Oct 2026).
+**Vercel** (static, no build; the user moved off GitHub Pages and Cloudflare Pages in Nov 2026).
+Live URL: set after the Vercel project exists; until then canonical/OG/sitemap/JSON-LD still name the old
+`https://hasthij.github.io/archy-site/`, which must be swapped for the Vercel URL.
 
 ## The brief (decided with the user)
 
@@ -76,10 +77,12 @@ Brand: Archy's app icon is `design/archy.png` (blue `#4D8DFF` triangle "A").
 
 ## Deploying
 
-GitHub Pages serves the repo root of `main` (Settings → Pages → Deploy from a
-branch → `main` / root). Every push to `main` goes live within a minute or two.
-`.nojekyll` makes GitHub serve files as-is. The site lives under `/archy-site/`,
-so use relative links; only `404.html` uses absolute `/archy-site/...` paths.
+Vercel project imports `hasthij/archy-site`, Framework preset "Other", no build command, output
+directory = repo root. Every push to `main` deploys. The site now lives at the domain root, so
+`404.html` uses absolute `/...` paths; other pages use relative links. Web Analytics is enabled in
+the Vercel project (Analytics tab); `main.js` injects `/_vercel/insights/script.js` on every host
+except localhost. Privacy page and CSP (`connect-src 'self'`) were updated for it, so the old
+"no trackers" wording is now "no cookies, no ads, anonymous visit counts".
 
 ## Nov 2026 marketing rework (supersedes the mockup-matching brief above)
 
