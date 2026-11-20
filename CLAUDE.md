@@ -94,7 +94,7 @@ state, keyframes play the loop, `[data-live]` blocks pause off screen.
   every release (v0.7.2 has none), so `main.js` asks `api.github.com` (CSP `connect-src`, disclosed
   in privacy.html) for the newest release that has a zip and rewrites every `a[data-asset="zip"]`;
   it also fills `[data-latest]` spans with version and sizes. Fallback hrefs point at `/releases/latest`.
-- `og.png` still says "Zero frames lost"; re-render it from `design/og-card.html` if the tagline sticks.
+- `og.png` is rendered from `design/og-card.html` with headless Chrome (`--window-size=1200,630 --screenshot`); keep it in sync with the tagline.
 
 ## What's built (Oct 2026)
 
