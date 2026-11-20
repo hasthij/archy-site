@@ -1012,3 +1012,11 @@ kbd {
 .dlcard .eyebrow { margin: 0; }
 .paren:not(:empty)::before { content: "("; }
 .paren:not(:empty)::after { content: ")"; }
+
+/* ---------- Shorter home page ---------- */
+.steps__more { margin-top: -8px; padding-bottom: 8px; }
+.section { padding-top: 56px; padding-bottom: 56px; }
+.specs { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
+.spec { grid-template-columns: 110px minmax(0, 1fr); gap: 16px; }
+.spec dd { font-size: 17px; }
+@media (max-width: 900px) { .specs { grid-template-columns: 1fr; } .spec { grid-template-columns: 1fr; gap: 6px; } }

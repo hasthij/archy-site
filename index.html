@@ -222,21 +222,6 @@
     </div>
   </section>
 
-  <!-- No list -->
-  <section class="nolist band band--white" aria-labelledby="no-title">
-    <div class="wrap nolist__inner">
-      <h2 class="nolist__lead" id="no-title" data-reveal>Free means free.</h2>
-      <ul class="nolist__words" data-reveal-group>
-        <li><s>Account</s></li>
-        <li><s>Ads</s></li>
-        <li><s>Subscription</s></li>
-        <li><s>Uploads</s></li>
-        <li><s>Telemetry</s></li>
-      </ul>
-      <p class="nolist__note" data-reveal>None of it. Archy is open source under GPL-3.0, so you can read every line or <a href="https://github.com/hasthij/Archy">build it yourself</a>.</p>
-    </div>
-  </section>
-
   <!-- How it works -->
   <section class="wrap section" id="steps" aria-labelledby="steps-title">
     <div class="section__head" data-reveal>
@@ -263,29 +248,7 @@
         <video class="shot" muted loop playsinline preload="none" poster="media/step-edit.webp" width="750" height="600" aria-label="Illustration: the Archy editor trimming a clip and exporting it"><source src="media/step-edit.mp4" type="video/mp4"></video>
       </li>
     </ol>
-  </section>
-
-  <!-- Ways to clip -->
-  <section class="band band--white" id="ways" aria-labelledby="ways-title">
-    <div class="wrap section ways">
-      <div class="ways__copy" data-reveal>
-        <p class="eyebrow">HOW TO CLIP</p>
-        <h2 class="section__title" id="ways-title">Four ways to save the moment.</h2>
-        <p>Keys, voice or the tray. Change any of them, or the clip length, in Archy's settings. The full guide takes you from install to your first clip in about five minutes.</p>
-        <a class="btn btn--ink btn--lg" href="how-to.html"><span class="btn__label">Read the guide</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span></a>
-      </div>
-      <div class="ways__box" data-reveal>
-        <table class="hk">
-          <thead><tr><th scope="col">How</th><th scope="col">What gets saved</th></tr></thead>
-          <tbody>
-            <tr><td><kbd>F8</kbd></td><td>the last 30 seconds</td></tr>
-            <tr><td><kbd>Shift</kbd> + <kbd>F8</kbd></td><td>the last 60 seconds</td></tr>
-            <tr><td>“Archer, clip that”</td><td>the last 30 seconds</td></tr>
-            <tr><td>“Archer, clip the last minute”</td><td>the last 60 seconds</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <p class="steps__more" data-reveal><a class="btn btn--outline btn--sm" href="how-to.html"><span class="btn__label">Read the full how-to guide</span></a></p>
   </section>
 
   <!-- Specs -->
@@ -343,20 +306,12 @@
         <div class="qa__a"><p>Barely. Archy encodes on the graphics chip's own video engine instead of the parts that draw your game, keeps to efficiency cores at low priority, and records nothing when no game is open. Measured in Roblox on an Intel iGPU, the cost was about 2–3% FPS.</p></div>
       </details>
       <details class="qa">
-        <summary>Which graphics cards does it work with?</summary>
-        <div class="qa__a"><p>NVIDIA (NVENC), Intel (Quick Sync) and AMD (AMF), including integrated graphics.</p></div>
-      </details>
-      <details class="qa">
         <summary>Does it work with fullscreen games like Minecraft?</summary>
         <div class="qa__a"><p>Yes. The capture method is set to Auto: exclusive-fullscreen games are recorded with Desktop Duplication, everything else with Windows Graphics Capture. You can force either one, and Archy suggests switching if a game's clip freezes or the cursor is missing.</p></div>
       </details>
       <details class="qa">
         <summary>Where do my clips go? Does it upload anything?</summary>
         <div class="qa__a"><p>Clips are saved to <code>Videos\Archy</code> as ordinary MP4 files (you can pick another folder). Nothing is uploaded and there's no account; voice clipping runs on your PC too. The only network use is an optional update check against GitHub.</p></div>
-      </details>
-      <details class="qa">
-        <summary>What does the installer download?</summary>
-        <div class="qa__a"><p>The installer is about 15 MB and installs just for you, so it doesn't need admin rights. While it runs it fetches the voice engine (about 24 MB) and the editor's video tools (FFmpeg, about 100 MB). You need Windows 10 version 2004 or newer, or Windows 11, 64-bit.</p></div>
       </details>
       <details class="qa">
         <summary>Why does Windows warn me about the installer?</summary>
