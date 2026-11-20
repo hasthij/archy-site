@@ -234,6 +234,7 @@ kbd {
   color: var(--ink);
   text-decoration: none;
 }
+.wordmark__icon { width: 28px; height: 28px; vertical-align: -6px; margin-right: 10px; }
 .wordmark:hover { color: var(--ink); }
 .wordmark__dot { color: var(--accent); display: inline-block; transition: transform .4s var(--ease-out); }
 .wordmark:hover .wordmark__dot { transform: translateY(-3px); }
