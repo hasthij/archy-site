@@ -3,8 +3,8 @@
 Archy is a free, open-source (GPL-3.0), local-first game clipper for Windows:
 https://github.com/hasthij/Archy. This repo is ONLY its website, hosted on
 **Vercel** (static, no build; the user moved off GitHub Pages and Cloudflare Pages in Nov 2026).
-Live URL: set after the Vercel project exists; until then canonical/OG/sitemap/JSON-LD still name the old
-`https://hasthij.github.io/archy-site/`, which must be swapped for the Vercel URL.
+Live URL: `https://archy-site-eta.vercel.app/` (project `hasthi-j/archy-site`). Canonical, OG, sitemap and
+JSON-LD use it; swap them (and recompute the JSON-LD CSP hash) if a custom domain is added.
 
 ## The brief (decided with the user)
 
@@ -108,7 +108,7 @@ state, keyframes play the loop, `[data-live]` blocks pause off screen.
   local fallbacks ("Archivo Fallback" on Arial, "Plex Mono Fallback" on Consolas).
 - SEO: meta description, canonical, Open Graph/Twitter card (`og.png`, rendered
   from `design/og-card.html` with headless Chrome), JSON-LD SoftwareApplication,
-  `sitemap.xml` (no robots.txt: it only works at a domain root). All absolute URLs use `https://hasthij.github.io/archy-site/`;
+  `sitemap.xml` (no robots.txt: it only works at a domain root). All absolute URLs use `https://archy-site-eta.vercel.app/`;
   change them (index, privacy, 404, sitemap) if a custom domain is added.
 - GitHub Pages can't set response headers, so each page carries its CSP in a
   `<meta http-equiv>` tag. The CSP in index.html allows the JSON-LD block by its
