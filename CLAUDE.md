@@ -81,6 +81,21 @@ branch → `main` / root). Every push to `main` goes live within a minute or two
 `.nojekyll` makes GitHub serve files as-is. The site lives under `/archy-site/`,
 so use relative links; only `404.html` uses absolute `/archy-site/...` paths.
 
+## Nov 2026 marketing rework (supersedes the mockup-matching brief above)
+
+The user wanted a page that sells and markets the product, not a mockup copy. Headline is now
+"Never miss the clip."; hero is an animated demo (game -> rolling buffer -> F8 -> "Clip saved"
+toast), then a ticker, a bento feature grid (performance trace, voice waveform, audio meters,
+Discord size squeeze, capture method, editor timeline, privacy), a struck-through "Free means
+free" band, steps, specs, CTA, FAQ. Copy reflects released v0.7.x only; do NOT advertise 0.8.0
+(the "Hybrid: Rail" UI) until it is released. Animation base styles are the finished still
+state, keyframes play the loop, `[data-live]` blocks pause off screen.
+- Download links: exe stays `releases/latest/download/Archy-Setup.exe`. The zip is not attached to
+  every release (v0.7.2 has none), so `main.js` asks `api.github.com` (CSP `connect-src`, disclosed
+  in privacy.html) for the newest release that has a zip and rewrites every `a[data-asset="zip"]`;
+  it also fills `[data-latest]` spans with version and sizes. Fallback hrefs point at `/releases/latest`.
+- `og.png` still says "Zero frames lost"; re-render it from `design/og-card.html` if the tagline sticks.
+
 ## What's built (Oct 2026)
 
 - `index.html`, `styles.css`, `main.js` at the root; `privacy.html` (privacy policy)

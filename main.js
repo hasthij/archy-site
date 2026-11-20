@@ -31,6 +31,36 @@
     });
   }
 
+  // Latest release: the exe link already follows /releases/latest/download, but the zip is
+  // not always attached to the newest release, so look up the newest one that has it.
+  // One anonymous GET to api.github.com; if it fails the static fallback links still work.
+  function mb(n) { return n >= 1e8 ? Math.round(n / 1e6) + " MB" : (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + " MB"; }
+  function fill(key, text) {
+    document.querySelectorAll('[data-latest="' + key + '"]').forEach(function (el) { el.textContent = text; });
+  }
+  if (window.fetch) {
+    fetch("https://api.github.com/repos/hasthij/Archy/releases?per_page=12", { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (releases) {
+        var exe = null, zip = null, newest = null;
+        releases.forEach(function (rel) {
+          if (rel.draft || rel.prerelease) return;
+          newest = newest || rel;
+          (rel.assets || []).forEach(function (a) {
+            if (!exe && /^Archy-Setup\.exe$/i.test(a.name)) exe = a;
+            if (!zip && /^Archy(-[\d.]+)?\.zip$/i.test(a.name)) zip = a;
+          });
+        });
+        if (newest) fill("version", newest.tag_name.replace(/^v?/, "v"));
+        if (exe) fill("exe-size", "~" + mb(exe.size));
+        if (zip) {
+          fill("zip-size", "(" + mb(zip.size) + ")");
+          document.querySelectorAll('a[data-asset="zip"]').forEach(function (a) { a.href = zip.browser_download_url; });
+        }
+      })
+      .catch(function () {});
+  }
+
   if (!("IntersectionObserver" in window)) {
     reveals.forEach(function (el) { el.classList.add("is-in"); });
     return;
@@ -46,12 +76,23 @@
   }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
   reveals.forEach(function (el) { revealer.observe(el); });
 
-  // The HUD loops forever; stop painting it while nobody can see it.
-  var hud = document.querySelector(".hud");
-  if (hud) {
-    new IntersectionObserver(function (entries) {
-      hud.classList.toggle("is-paused", !entries[0].isIntersecting);
-    }).observe(hud);
+  // Looping animations: stop painting them while nobody can see them.
+  var live = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) { entry.target.classList.toggle("is-paused", !entry.isIntersecting); });
+  });
+  document.querySelectorAll("[data-live]").forEach(function (el) { live.observe(el); });
+
+  // Thin scroll-progress bar under the header (transform only).
+  var bar = document.querySelector(".progress");
+  if (bar) {
+    var ticking = false;
+    var update = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ")";
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
   }
 
   // Step clips: play only while on screen, and never with reduced motion (the poster stays).
