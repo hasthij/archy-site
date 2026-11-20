@@ -38,7 +38,7 @@
   function fill(key, text) {
     document.querySelectorAll('[data-latest="' + key + '"]').forEach(function (el) { el.textContent = text; });
   }
-  if (window.fetch) {
+  if (window.fetch && document.querySelector("[data-asset], [data-latest]")) {
     fetch("https://api.github.com/repos/hasthij/Archy/releases?per_page=12", { headers: { Accept: "application/vnd.github+json" } })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (releases) {
@@ -54,7 +54,7 @@
         if (newest) fill("version", newest.tag_name.replace(/^v?/, "v"));
         if (exe) fill("exe-size", "~" + mb(exe.size));
         if (zip) {
-          fill("zip-size", "(" + mb(zip.size) + ")");
+          fill("zip-size", mb(zip.size));
           document.querySelectorAll('a[data-asset="zip"]').forEach(function (a) { a.href = zip.browser_download_url; });
         }
       })
@@ -81,6 +81,22 @@
     entries.forEach(function (entry) { entry.target.classList.toggle("is-paused", !entry.isIntersecting); });
   });
   document.querySelectorAll("[data-live]").forEach(function (el) { live.observe(el); });
+
+  // Guide: highlight the table-of-contents link of the chapter being read.
+  var tocLinks = document.querySelectorAll(".toc a");
+  if (tocLinks.length) {
+    var byId = {};
+    tocLinks.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+    var chapters = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        tocLinks.forEach(function (a) { a.removeAttribute("aria-current"); });
+        var a = byId[e.target.id];
+        if (a) a.setAttribute("aria-current", "true");
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    document.querySelectorAll(".chapter[id]").forEach(function (c) { chapters.observe(c); });
+  }
 
   // Thin scroll-progress bar under the header (transform only).
   var bar = document.querySelector(".progress");

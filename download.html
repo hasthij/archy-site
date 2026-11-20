@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Archy for Windows · Archy</title>
+<meta name="description" content="Download Archy, the free open-source game clipper for Windows. Installer or portable zip, no account, nothing uploaded.">
+<link rel="canonical" href="https://hasthij.github.io/archy-site/download.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1320" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Download Archy for Windows · Archy">
+<meta property="og:description" content="Download Archy, the free open-source game clipper for Windows. Installer or portable zip, no account, nothing uploaded.">
+<meta property="og:url" content="https://hasthij.github.io/archy-site/download.html">
+<meta property="og:image" content="https://hasthij.github.io/archy-site/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="how-to.html">How to clip</a>
+      <a href="./#specs">Specs</a>
+      <a href="troubleshooting.html">Help</a>
+      <a href="https://github.com/hasthij/Archy">Source</a>
+    </nav>
+    <a class="btn btn--ink btn--sm" href="download.html">
+      <span class="btn__label">Download<span class="hide-sm"> · Windows</span></span>
+      <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+    </a>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="wrap section prose">
+  <p class="eyebrow">FREE · OPEN SOURCE · GPL-3.0</p>
+  <h1 class="section__title page__title">Download Archy</h1>
+
+  <p class="prose__lede page__lede">Free, open source, no account. Pick the installer, or the zip if your antivirus or Windows gets in the way.</p>
+  <div class="dlcards">
+    <section class="dlcard dlcard--main" aria-labelledby="dl-exe">
+      <p class="eyebrow">RECOMMENDED</p>
+      <h2 id="dl-exe">Installer</h2>
+      <p class="dlcard__meta"><span data-latest="version">Latest</span> · <span data-latest="exe-size">~15 MB</span> · Archy-Setup.exe</p>
+      <p>Installs just for you (no admin rights), starts with Windows if you want, and updates itself when you let it.</p>
+      <a class="btn btn--accent btn--lg" href="https://github.com/hasthij/Archy/releases/latest/download/Archy-Setup.exe"><span class="btn__label">Download Archy-Setup.exe</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span></a>
+    </section>
+    <section class="dlcard" id="zip" aria-labelledby="dl-zip">
+      <p class="eyebrow">OFFLINE · PORTABLE</p>
+      <h2 id="dl-zip">Zip</h2>
+      <p class="dlcard__meta"><span data-latest="zip-size">about 190 MB</span> · includes FFmpeg and voice</p>
+      <p>Holds <code>Archy-Setup.exe</code> that works offline, plus a <code>Portable</code> folder: copy it anywhere and run <code>archy.exe</code>, no install at all. Use it if the exe is blocked or deleted.</p>
+      <a class="btn btn--outline btn--lg" href="https://github.com/hasthij/Archy/releases/latest" data-asset="zip"><span class="btn__label">Download the zip</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span></a>
+    </section>
+  </div>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>64-bit Windows 10 (version 2004 or newer) or Windows 11.</li>
+    <li>An Intel, NVIDIA or AMD graphics chip with a video encoder (Quick Sync, NVENC or AMF).</li>
+    <li>About 100 MB of extra downloads during setup for the editor's video tools, and about 24 MB for the voice engine, unless you use the zip.</li>
+  </ul>
+
+  <h2>Windows says “protected your PC”</h2>
+  <p>The installer isn't code-signed: a code-signing certificate costs hundreds of dollars every year, which is a lot for a free hobby project, so Windows SmartScreen doesn't recognise Archy yet. Click <strong>More info</strong>, then <strong>Run anyway</strong>. Only download Archy from this site or its <a href="https://github.com/hasthij/Archy/releases">GitHub releases</a>. The full source is public, so you can read it or <a href="https://github.com/hasthij/Archy#building-from-source">build it yourself</a>.</p>
+
+  <h2>What happens next</h2>
+  <p>Archy starts in your system tray. Follow the <a href="how-to.html">how-to guide</a> to pick your mic, calibrate voice clipping and save your first clip. Something wrong? <a href="troubleshooting.html">Troubleshooting</a> has the fixes.</p>
+  <p class="dl__small-note">Release notes: <a href="changelog.html">changelog</a> · <a href="https://github.com/hasthij/Archy/releases/latest">GitHub release</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+      <p>Free, open-source, local-first game clipper for Windows.</p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="download.html">Download</a></li>
+      <li><a href="how-to.html">How to clip</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="https://github.com/hasthij/Archy">GitHub</a></li>
+      <li><a href="https://github.com/hasthij/Archy/blob/main/LICENSE">Licence (GPL-3.0)</a></li>
+      <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either. <a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

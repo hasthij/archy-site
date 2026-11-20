@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog · Archy</title>
+<meta name="description" content="Release notes for Archy: fullscreen capture, per-app audio tracks, the CapCut-style editor and every fix, version by version.">
+<link rel="canonical" href="https://hasthij.github.io/archy-site/changelog.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1320" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Changelog · Archy">
+<meta property="og:description" content="Release notes for Archy: fullscreen capture, per-app audio tracks, the CapCut-style editor and every fix, version by version.">
+<meta property="og:url" content="https://hasthij.github.io/archy-site/changelog.html">
+<meta property="og:image" content="https://hasthij.github.io/archy-site/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="how-to.html">How to clip</a>
+      <a href="./#specs">Specs</a>
+      <a href="troubleshooting.html">Help</a>
+      <a href="https://github.com/hasthij/Archy">Source</a>
+    </nav>
+    <a class="btn btn--ink btn--sm" href="download.html">
+      <span class="btn__label">Download<span class="hide-sm"> · Windows</span></span>
+      <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+    </a>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="wrap section prose">
+  <p class="eyebrow">RELEASE NOTES</p>
+  <h1 class="section__title page__title">Changelog</h1>
+
+  <p class="prose__lede page__lede">What changed in each release. The newest version is always the one the download button gets you.</p>
+  <article class="rel" data-reveal>
+    <header class="rel__head"><h2>0.7.2</h2><time datetime="2026-11-18">2026-11-18</time></header>
+    <ul><li>Session and clip fixes on every capture mode (window, monitor, exclusive fullscreen): no cut tails, no overshoot on stop, and clips on still windows no longer start far back.</li><li>The save log shows the seconds requested.</li></ul>
+  </article>
+  <article class="rel" data-reveal>
+    <header class="rel__head"><h2>0.7.1</h2><time datetime="2026-11-17">2026-11-17</time></header>
+    <ul><li>Audio preview delay fix.</li><li>10-minute limit for added video, GIF and sound; delete button on timeline items.</li><li>Faster Spotify and app detection; Discord status only while clipping.</li><li>Stays attached to the game when you alt-tab (window and fullscreen capture).</li><li>Crash fix: panics are now caught and logged.</li></ul>
+  </article>
+  <article class="rel" data-reveal>
+    <header class="rel__head"><h2>0.7.0</h2><time datetime="2026-11-14">2026-11-14</time></header>
+    <ul><li>Desktop Duplication capture for exclusive-fullscreen games (Minecraft and the like).</li><li>Capture method picker: Auto, Desktop Duplication or Windows capture.</li><li>Recorder GPU priority setting.</li></ul>
+  </article>
+  <article class="rel" data-reveal>
+    <header class="rel__head"><h2>0.6.5</h2><time datetime="2026-11-14">2026-11-14</time></header>
+    <ul><li>New dark installer, also used for in-app updates.</li><li>Fixes a false “update available” on fresh PCs.</li><li>Editor, mixer and audio improvements.</li><li>Archy.zip: installer plus a Portable folder, offline, with FFmpeg and voice included.</li></ul>
+  </article>
+  <article class="rel" data-reveal>
+    <header class="rel__head"><h2>0.6.4</h2><time datetime="2026-11-13">2026-11-13</time></header>
+    <ul><li>CapCut-style editor: drag the Order blocks to rearrange parts, and a Snap toggle (magnets for parts, items and the playhead).</li><li>Media imports can be as long as the clip you're editing; the trim popup asks you to pick the right part.</li><li>Per-app audio tracks with a game-only track 1; mixer volumes no longer mute off 100%.</li><li>Speed-up audio preview, visible resize handles on drawings and images, track names saved in session files.</li></ul>
+  </article>
+  <p>Older versions and full notes are on the <a href="https://github.com/hasthij/Archy/releases">GitHub releases page</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+      <p>Free, open-source, local-first game clipper for Windows.</p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="download.html">Download</a></li>
+      <li><a href="how-to.html">How to clip</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="https://github.com/hasthij/Archy">GitHub</a></li>
+      <li><a href="https://github.com/hasthij/Archy/blob/main/LICENSE">Licence (GPL-3.0)</a></li>
+      <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either. <a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

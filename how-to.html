@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to clip your games · Archy</title>
+<meta name="description" content="Step-by-step guide to Archy: install, set up voice clipping, save a clip with F8, record fullscreen games, pick quality and share to Discord.">
+<link rel="canonical" href="https://hasthij.github.io/archy-site/how-to.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1320" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to clip your games · Archy">
+<meta property="og:description" content="Step-by-step guide to Archy: install, set up voice clipping, save a clip with F8, record fullscreen games, pick quality and share to Discord.">
+<meta property="og:url" content="https://hasthij.github.io/archy-site/how-to.html">
+<meta property="og:image" content="https://hasthij.github.io/archy-site/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="how-to.html" aria-current="page">How to clip</a>
+      <a href="./#specs">Specs</a>
+      <a href="troubleshooting.html">Help</a>
+      <a href="https://github.com/hasthij/Archy">Source</a>
+    </nav>
+    <a class="btn btn--ink btn--sm" href="download.html">
+      <span class="btn__label">Download<span class="hide-sm"> · Windows</span></span>
+      <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+    </a>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="wrap section guide-page">
+  <p class="eyebrow">GUIDE · ABOUT 5 MINUTES</p>
+  <h1 class="section__title page__title">How to clip your games</h1>
+
+  <p class="prose__lede page__lede">From download to your first clip in about five minutes. Everything here is free and runs on your PC.</p>
+  <div class="guide">
+    <nav class="toc" aria-label="On this page"><a href="#install">Install</a><a href="#setup">First-time setup</a><a href="#clip">Save a clip</a><a href="#games">Games and capture</a><a href="#quality">Quality and size</a><a href="#edit">Edit and share</a><a href="#voice">Voice tips</a></nav>
+    <div class="prose guide__body">
+
+      <section class="chapter" id="install">
+        <h2><span class="chapter__num">01</span>Install Archy</h2>
+        <ol class="stepper">
+          <li>Get <a href="download.html">Archy-Setup.exe</a> and run it. It installs just for you, so it doesn't need admin rights.</li>
+          <li>Setup downloads the voice engine (about 24 MB) and the editor's video tools (FFmpeg, about 100 MB). It can look paused for a minute or two.</li>
+          <li>If Windows is missing something Archy needs, Setup tells you and opens the right page. Archy never changes Windows settings on its own.</li>
+          <li>Archy starts in the <strong>system tray</strong>, bottom-right next to the clock. Look for the blue <strong>A</strong>. A red dot on the icon means it's recording a game.</li>
+        </ol>
+        <p class="callout"><strong>Windows SmartScreen warning?</strong> The installer isn't code-signed (a certificate costs hundreds of dollars a year). Click <strong>More info</strong>, then <strong>Run anyway</strong>. Blocked outright? Use the <a href="download.html#zip">zip or portable version</a>.</p>
+        <p>You need 64-bit Windows 10 (version 2004 or newer) or Windows 11.</p>
+      </section>
+
+      <section class="chapter" id="setup">
+        <h2><span class="chapter__num">02</span>First-time setup</h2>
+        <p>Open Archy from the Start menu or the tray icon, then go through these four things. It takes about two minutes.</p>
+        <h3>Pick your microphone</h3>
+        <p><strong>Audio → Microphone.</strong> Choose the mic you actually talk into. Archy records your voice from it, and voice clipping listens to it too.</p>
+        <h3>Calibrate voice clipping</h3>
+        <p><strong>Audio → Voice clipping → Calibrate to your voice → Calibrate.</strong> Everyone says things differently, and calibration teaches Archy how <em>you</em> say your phrase.</p>
+        <ol class="stepper">
+          <li>When Archy shows <strong>“Say: Archer clip that”</strong>, say it the way you would mid-game: all in one go, normal speed, no careful pauses. It asks 5 times.</li>
+          <li>When it shows <strong>“Now just talk normally”</strong>, chat or play for 15 seconds <em>without</em> saying the phrase. This is how Archy checks that it won't clip by accident.</li>
+          <li>Wait about 30 seconds while it learns. It then shows something like “Caught 5 of 5” and switches Sensitivity to <strong>Calibrated</strong>.</li>
+        </ol>
+        <p>Calibrate when you're not in the middle of a match: the learning step uses a few CPU cores for about 30 seconds. Calibrate again if you change your mic, your phrase, or where you sit. The recording never leaves your PC and is thrown away afterwards.</p>
+        <h3>Add your games</h3>
+        <p><strong>Games.</strong> Roblox is already in the list. Use the running-apps picker to add anything else that's open. <strong>Other fullscreen apps</strong> (on by default) also records most other games running fullscreen.</p>
+        <h3>Check your clips folder</h3>
+        <p><strong>Storage.</strong> Clips go to <code>Videos\Archy</code> by default. Click to choose a different folder.</p>
+      </section>
+
+      <section class="chapter" id="clip">
+        <h2><span class="chapter__num">03</span>Save a clip</h2>
+        <p>Open a game and play. Archy keeps the last moments in memory while a game is in front, and records nothing when no game is running. When something happens:</p>
+        <table class="hk">
+          <thead><tr><th scope="col">How</th><th scope="col">What gets saved</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>F8</kbd></td><td>the last 30 seconds</td></tr>
+            <tr><td><kbd>Shift</kbd> + <kbd>F8</kbd></td><td>the last 60 seconds</td></tr>
+            <tr><td>“Archer, clip that”</td><td>the last 30 seconds</td></tr>
+            <tr><td>“Archer, clip the last minute”</td><td>the last 60 seconds</td></tr>
+            <tr><td>Tray menu</td><td>pause or resume recording</td></tr>
+          </tbody>
+        </table>
+        <p>You can change every hotkey, every phrase and the clip lengths in Archy. A chime tells you a clip was saved, and each new clip is also copied, so you can paste it straight into Discord.</p>
+      </section>
+
+      <section class="chapter" id="games">
+        <h2><span class="chapter__num">04</span>Games and capture</h2>
+        <ul>
+          <li><strong>Window</strong> captures only the game, so popups never appear. <strong>Screen</strong> captures the whole monitor, for games that can't be captured as a window (pick which screen, like a screenshare).</li>
+          <li><strong>Capture method</strong> (top bar): <em>Auto</em> uses Desktop Duplication for exclusive-fullscreen games (Minecraft and the like) and Windows capture for everything else. You can force either one.</li>
+          <li>If the cursor is missing in a clip, or a game's clip freezes, switch the capture method. Archy also suggests it.</li>
+          <li>Archy never injects into a game, so it is safe to run alongside anti-cheat.</li>
+          <li><strong>Efficiency mode</strong> (on by default) keeps Archy on efficiency cores at low priority, so your game keeps the fast ones. On integrated graphics, raise <strong>Recorder GPU priority</strong> if clips look choppy.</li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="quality">
+        <h2><span class="chapter__num">05</span>Quality and size</h2>
+        <ul>
+          <li><strong>Quality:</strong> Discord (fits the 10 MB limit), or 360p up to 1440p. <strong>720p</strong> is the recommended balance, about 19 MB per 30 seconds.</li>
+          <li><strong>Frame rate:</strong> 24 to 144 fps. <strong>60</strong> is recommended; lower is less work for weak PCs. 120 and 144 need a monitor that fast; if your graphics chip can't record that fast, Archy uses 60.</li>
+          <li><strong>Format:</strong> H.264, HEVC or AV1 in MP4, encoded on your graphics chip's own video engine (Intel Quick Sync, NVIDIA NVENC or AMD AMF).</li>
+          <li><strong>Audio tracks:</strong> turn each on or off, pick the speakers or headphones to record from, and set the audio bitrate. You get everything you heard with your mic mixed in, plus the game alone, Discord alone, your mic alone and other apps.</li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="edit">
+        <h2><span class="chapter__num">06</span>Edit and share</h2>
+        <ul>
+          <li><strong>Paste into Discord:</strong> every new clip is already copied. Too big for the free 10 MB limit? Use <strong>Discord copy</strong> on the clip for a version that fits, or set <strong>Quality → Discord (10 MB)</strong> so new clips always fit.</li>
+          <li><strong>Open the editor</strong> to trim, split and rearrange parts, and add text, images, drawings, video or music. Balance each audio source's volume. Undo and redo are there when you need them.</li>
+          <li><strong>Export</strong> an MP4, GIF or MP3, save it, or copy it to the clipboard.</li>
+        </ul>
+        <p class="callout">Nothing is uploaded at any point. Your clips live in <code>Videos\Archy</code> as ordinary MP4 files until you share them yourself.</p>
+      </section>
+
+      <section class="chapter" id="voice">
+        <h2><span class="chapter__num">07</span>Voice tips</h2>
+        <ul>
+          <li><strong>Use real, everyday words.</strong> The voice model knows real English words, so made-up names and gamer tags can't be recognized. That's why the default is “Archer” and not “Archy”.</li>
+          <li><strong>3–4 words you wouldn't say by accident</strong> work best.</li>
+          <li><strong>Changed a phrase? Calibrate again.</strong> What Archy learned belongs to the phrase you calibrated.</li>
+          <li><strong>Missing you?</strong> Calibrate again, or try <strong>Loose</strong> sensitivity. <strong>Clipping by accident?</strong> Try <strong>Strict</strong>.</li>
+        </ul>
+        <p>Still stuck? See <a href="troubleshooting.html">troubleshooting</a>.</p>
+        <p><a class="btn btn--accent btn--lg" href="download.html"><span class="btn__label">Download Archy</span><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span></a></p>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+      <p>Free, open-source, local-first game clipper for Windows.</p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="download.html">Download</a></li>
+      <li><a href="how-to.html">How to clip</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="https://github.com/hasthij/Archy">GitHub</a></li>
+      <li><a href="https://github.com/hasthij/Archy/blob/main/LICENSE">Licence (GPL-3.0)</a></li>
+      <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either. <a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

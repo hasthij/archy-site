@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting · Archy</title>
+<meta name="description" content="Fixes for Archy: voice clipping not reacting, missing tray icon, no mic in clips, Discord size limit, fullscreen capture problems and blocked installers.">
+<link rel="canonical" href="https://hasthij.github.io/archy-site/troubleshooting.html">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1320" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Troubleshooting · Archy">
+<meta property="og:description" content="Fixes for Archy: voice clipping not reacting, missing tray icon, no mic in clips, Discord size limit, fullscreen capture problems and blocked installers.">
+<meta property="og:url" content="https://hasthij.github.io/archy-site/troubleshooting.html">
+<meta property="og:image" content="https://hasthij.github.io/archy-site/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="how-to.html">How to clip</a>
+      <a href="./#specs">Specs</a>
+      <a href="troubleshooting.html" aria-current="page">Help</a>
+      <a href="https://github.com/hasthij/Archy">Source</a>
+    </nav>
+    <a class="btn btn--ink btn--sm" href="download.html">
+      <span class="btn__label">Download<span class="hide-sm"> · Windows</span></span>
+      <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><svg viewBox="0 0 16 16"><path d="M8 2v8M4 6.5 8 10.5l4-4"/></svg><i></i></span>
+    </a>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="wrap section prose">
+  <p class="eyebrow">HELP</p>
+  <h1 class="section__title page__title">Troubleshooting</h1>
+
+  <p class="prose__lede">Most problems have a quick fix. If yours isn't here, Archy writes a log you can send us.</p>
+  <div class="faq">
+      <details class="qa"><summary>Voice clipping doesn't react</summary><div class="qa__a"><p>Try these in order:</p><ol class="stepper"><li><strong>Calibrate.</strong> That fixes most cases: Audio → Voice clipping → Calibrate to your voice.</li><li>Check <strong>Audio → Microphone</strong> is the mic you talk into.</li><li>Check Windows mic access: Settings → Privacy &amp; security → Microphone. Turn on <em>Microphone access</em> and <em>Let desktop apps access your microphone</em>.</li><li>If Archy says the voice files are missing, run Archy-Setup.exe again to re-download them.</li></ol></div></details>
+      <details class="qa"><summary>There's no tray icon after installing</summary><div class="qa__a"><p>Setup tells you if Archy didn't start. Antivirus is the usual cause: allow <code>archy.exe</code> in <code>%LOCALAPPDATA%\Programs\Archy</code>, then open Archy from the Start menu.</p></div></details>
+      <details class="qa"><summary>My voice isn't in the clip</summary><div class="qa__a"><p>Turn on <strong>Audio → Your microphone</strong> and check the right mic is picked. Your voice is mixed into track 1, so every player hears it.</p></div></details>
+      <details class="qa"><summary>The clip is too big for Discord</summary><div class="qa__a"><p>Click <strong>Discord copy</strong> on the clip in Archy, or set <strong>Quality → Discord (10 MB)</strong> so new clips always fit.</p></div></details>
+      <details class="qa"><summary>The cursor is missing, or a game's clip freezes</summary><div class="qa__a"><p>Switch the <strong>capture method</strong> in the top bar. <em>Auto</em> uses Desktop Duplication for exclusive-fullscreen games and Windows capture for everything else; forcing the other one often fixes it. Archy also suggests the switch.</p></div></details>
+      <details class="qa"><summary>Clips look choppy on integrated graphics</summary><div class="qa__a"><p>Raise <strong>Recorder GPU priority</strong> in settings (Equal is the default), or lower the frame rate or quality. 60 fps at 720p is the recommended balance.</p></div></details>
+      <details class="qa"><summary>Windows or my antivirus blocks the installer</summary><div class="qa__a"><p>The installer isn't code-signed, so SmartScreen may say “Windows protected your PC”: click <strong>More info</strong>, then <strong>Run anyway</strong>. If the exe is still blocked or deleted, use the <a href="download.html#zip">zip</a>: unzip it and run <code>Archy-Setup.exe</code>, or open the <code>Portable</code> folder and run <code>archy.exe</code> with no install. Only download Archy from its <a href="https://github.com/hasthij/Archy/releases">GitHub releases</a>.</p></div></details>
+      <details class="qa"><summary>Where are my clips?</summary><div class="qa__a"><p>In <code>Videos\Archy</code> by default. Change it in Archy under <strong>Storage</strong>.</p></div></details>
+      <details class="qa"><summary>How do I stop Archy checking for updates?</summary><div class="qa__a"><p>Turn off <strong>General → Check for updates</strong> and Archy never goes online after install. Updates are only ever downloaded from github.com and always ask you before installing.</p></div></details>
+      <details class="qa"><summary>How do I uninstall it?</summary><div class="qa__a"><p>Settings → Apps → Installed apps → Archy → Uninstall. Your clips and settings are kept.</p></div></details>
+  </div>
+  <h2>Still stuck?</h2>
+  <p>Archy writes a log to <code>%APPDATA%\Archy\archy.log</code>. Please include it when you <a href="https://github.com/hasthij/Archy/issues">open an issue on GitHub</a>.</p>
+  <p><a class="btn btn--outline btn--lg" href="how-to.html"><span class="btn__label">Read the how-to guide</span></a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark" href="./" aria-label="Archy home">ARCHY<span class="wordmark__dot">.</span></a>
+      <p>Free, open-source, local-first game clipper for Windows.</p>
+    </div>
+    <ul class="site-footer__links">
+      <li><a href="download.html">Download</a></li>
+      <li><a href="how-to.html">How to clip</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+      <li><a href="https://github.com/hasthij/Archy">GitHub</a></li>
+      <li><a href="https://github.com/hasthij/Archy/blob/main/LICENSE">Licence (GPL-3.0)</a></li>
+      <li><a href="https://github.com/hasthij/Archy/issues">Report a bug</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="site-footer__small">Made by Hasthi. This site has no cookies and no trackers either. <a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+</body>
+</html>
