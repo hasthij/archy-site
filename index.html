@@ -80,22 +80,25 @@
     </div>
 
     <figure class="demo" data-live aria-labelledby="demo-caption">
+      <div class="demo__stack" data-parallax="0.07">
       <div class="demo__screen">
-        <div class="demo__game" aria-hidden="true">
-          <div class="demo__sky"></div>
-          <div class="demo__hills"><svg viewBox="0 0 800 120" preserveAspectRatio="none"><path d="M0 120V70l60-28 70 34 90-52 80 40 70-22 90 46 80-30 70 18 90-40 100 34V120Z"/></svg><svg viewBox="0 0 800 120" preserveAspectRatio="none"><path d="M0 120V70l60-28 70 34 90-52 80 40 70-22 90 46 80-30 70 18 90-40 100 34V120Z"/></svg></div>
-          <div class="demo__floor"><i></i></div>
-          <span class="demo__cross"></span>
-        </div>
         <div class="demo__bar" aria-hidden="true">
-          <span class="demo__rec"><i></i>REC · LAST 30 S READY</span>
-          <span class="demo__fps"><span>14</span><span class="fps__roll"><span class="fps__col"><span>4</span><span>3</span><span>4</span><span>2</span><span>4</span></span></span> FPS</span>
+          <span class="demo__rec"><i></i>RECORDING · ROBLOX</span>
+          <span class="demo__ready">LAST 30 S READY</span>
+        </div>
+        <ul class="demo__tiles" aria-hidden="true">
+          <li><b><span>14</span><span class="fps__roll"><span class="fps__col"><span>4</span><span>3</span><span>4</span><span>2</span><span>4</span></span></span></b><span>FPS captured</span></li>
+          <li><b>GPU</b><span>video encoder</span></li>
+          <li><b>Local</b><span>nothing uploaded</span></li>
+        </ul>
+        <div class="demo__slot" aria-hidden="true">
+          <span class="demo__empty">NEXT CLIP APPEARS HERE</span>
+          <div class="demo__toast">
+            <span class="demo__thumb"><i></i></span>
+            <span class="demo__toast-text"><b>Clip saved · 30 s</b><span>720p · about 19 MB · copied, paste it into Discord</span></span>
+          </div>
         </div>
         <i class="demo__flash" aria-hidden="true"></i>
-        <div class="demo__toast" aria-hidden="true">
-          <span class="demo__thumb"><i></i></span>
-          <span class="demo__toast-text"><b>Clip saved · 30 s</b><span>Copied. Paste it into Discord.</span></span>
-        </div>
       </div>
       <div class="demo__rail" aria-hidden="true">
         <span class="demo__key"><kbd>F8</kbd></span>
@@ -104,6 +107,7 @@
           <span class="demo__window"><span>LAST 30 S</span></span>
           <span class="demo__now">NOW</span>
         </div>
+      </div>
       </div>
       <figcaption id="demo-caption" class="sr-only">Animation: a game runs at about 144 FPS while Archy keeps the last 30 seconds in memory. Pressing F8 saves those seconds as a clip and copies it, ready to paste into Discord.</figcaption>
     </figure>
